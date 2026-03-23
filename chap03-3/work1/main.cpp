@@ -1,14 +1,14 @@
-#include <opencv2/opencv.hpp>   // OpenCV의 Mat 클래스를 사용하기 위한 헤더
-#include <iostream>             // 콘솔 입출력(cout 등)을 위한 헤더
+#include <opencv2/opencv.hpp>   // OpenCV 함수들을 사용하기 위한 헤더 파일
+#include <iostream>             // 입출력(printf, cout 등)을 사용하기 위한 헤더 파일
 
-using namespace cv;             // cv::Mat 대신 Mat 등으로 쓰기 위해 사용
-using namespace std;            // std::cout 대신 cout 등으로 쓰기 위해 사용
+using namespace cv;             // cv 네임스페이스
+using namespace std;            // std 네임스페이스
 
 int main()
 {
     // mat1 = [ 3.5   2.1
     //         -1.5  -6.5 ]
-    // 2행 2열의 double 타입 행렬을 만들고, << 뒤에 값을 순서대로 채워 넣는다.
+    // 2행 2열의 double 타입 행렬을 만들고 << 뒤에 값을 순서대로 채워 넣는다.
     Mat mat1 = (Mat_<double>(2, 2) << 3.5, 2.1,
         -1.5, -6.5);
 
@@ -41,6 +41,5 @@ int main()
     cout << "mat3 = " << endl << mat3 << endl << endl;
     cout << "mat4 = " << endl << mat4 << endl << endl;
 
-    // 프로그램 정상 종료
     return 0;
 }
