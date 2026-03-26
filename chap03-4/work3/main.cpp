@@ -19,7 +19,7 @@ int main()
     // x, y     : 얼굴 좌상단 좌표 (그림판 상태바에서 확인)
     // width    : x2 - x1
     // height   : y2 - y1
-    Rect faceROI(104, 46, 70, 70); // ← 실제 측정값으로 수정
+    Rect faceROI(115, 73, 48, 10); // 실제 측정값
 
     // 얼굴 ROI 영역을 파란색(BGR: 255, 0, 0)으로 채우기
     img2(faceROI) = Scalar(255, 0, 0);
