@@ -104,4 +104,8 @@ VideoWriter("파일명", fourcc, fps, Size(width, height))
 
 
 
+https://github.com/user-attachments/assets/5a85d4f8-533b-423f-92a9-047a6664c69b
+
+
+
 ---
