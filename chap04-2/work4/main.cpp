@@ -15,7 +15,7 @@ int main(void)
 	int h = cvRound(cap.get(CAP_PROP_FRAME_HEIGHT));
 
 	int fourcc = VideoWriter::fourcc('D', 'I', 'V', 'X');
-	VideoWriter outputVideo("output.avi", fourcc, 30, Size(w, h));
+	VideoWriter outputVideo("output.mp4", fourcc, 30, Size(w, h));
 
 	if (!outputVideo.isOpened()) {
 		cout << "File open failed!" << endl;
