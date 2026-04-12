@@ -1,41 +1,25 @@
 #include <opencv2/opencv.hpp>
-#include <iostream>
 using namespace cv;
-using namespace std;
 
-int main(void)
-{
-	VideoCapture cap(0);
+int main() {
+    VideoCapture cap(0);
 
-	if (!cap.isOpened()) {
-		cerr << "Camera open failed!" << endl;
-		return -1;
-	}
+    while (true) {
+        Mat frame;
+        cap >> frame;
 
-	Mat frame, dst;
+        int h = frame.rows;
+        int w = frame.cols;
 
-	while (true) {
-		cap >> frame;
+        Mat cross = frame.clone();
+        line(cross, Point(w/2, 0), Point(w/2, h), Scalar(0, 0, 255), 2);
+        line(cross, Point(0, h/2), Point(w, h/2), Scalar(0, 0, 255), 2);
 
-		if (frame.empty()) {
-			cerr << "frame empty!" << endl;
-			break;
-		}
+        imshow("frame", frame);
+        imshow("cross", cross);
 
-		dst = frame.clone();
+        if (waitKey(1) == 'q') break;
+    }
 
-		int cx = dst.cols / 2;
-		int cy = dst.rows / 2;
-
-		line(dst, Point(0, cy), Point(dst.cols, cy), Scalar(0, 0, 255), 2);
-		line(dst, Point(cx, 0), Point(cx, dst.rows), Scalar(0, 0, 255), 2);
-
-		imshow("frame", frame);
-		imshow("dst", dst);
-
-		if (waitKey(10) == 'q')
-			break;
-	}
-
-	return 0;
+    return 0;
 }
