@@ -46,3 +46,23 @@ int main(void)
 	}
 	return 0;
 }
+
+/*
+#include <opencv2/opencv.hpp>
+#include <iostream> 
+using namespace std;
+using namespace cv;
+
+int main() {
+	VideoCapture cap("stopwatch.avi");
+	while (true) {
+		Mat frame;
+		cap >> frame;
+		Mat bright = frame + Scalar(100, 100, 100);
+		imshow("fr", frame);
+		imshow("br", bright);
+		int key = waitKey(33);
+		if (key == 'q' || key == 'Q')break;
+	}
+}
+*/
