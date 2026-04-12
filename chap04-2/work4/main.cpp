@@ -37,3 +37,26 @@ int main(void)
 		}
 	}
 }
+/*
+#include <opencv2/opencv.hpp>
+#include <iostream>
+using namespace std;
+using namespace cv;
+
+int main() {
+	VideoCapture cap(0);
+	int fourcc = VideoWriter::fourcc('X', 'V', 'I', 'D');
+	VideoWriter outputvideo("output.mp4", fourcc, 30, Size(640, 480));
+
+	while (true) {
+		Mat frame;
+		cap >> frame;
+
+		outputvideo << frame;
+		imshow("fr", frame);
+
+		int key = waitKey(33);
+		if (key == 'q' || key == 'Q') break;
+	}
+}
+*/
