@@ -1,42 +1,24 @@
 #include <opencv2/opencv.hpp>
-#include <iostream>
-using namespace cv;
+#include <iostream> 
 using namespace std;
+using namespace cv;
 
-int main(void)
-{
+int main() {
 	VideoCapture cap(0);
-
-	if (!cap.isOpened()) {
-		cerr << "Camera open failed!" << endl;
-		return -1;
-	}
-
-	Mat frame;
-	int cnt = 0;
+	int count = 0;
 
 	while (true) {
+		Mat frame;
 		cap >> frame;
 
-		if (frame.empty()) {
-			cerr << "frame empty!" << endl;
-			break;
-		}
+		imshow("img", frame);
 
-		imshow("frame", frame);
-
-		int key = waitKey(10);
-
-		if (key == 'q' || key == 'Q')
-			break;
-
+		int key = waitKey(1);
+		if (key == 'Q' || key == 'q') break;
 		if (key == 's') {
-			String filename = format("frame%02d.jpg", cnt);
-			imwrite(filename, frame);
-			cout << filename << " saved." << endl;
-			cnt++;
+			imwrite(format("frame%02d.jpg", count), frame);
+			count++;
 		}
 	}
-
 	return 0;
 }
