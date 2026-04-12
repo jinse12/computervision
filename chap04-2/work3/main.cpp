@@ -53,6 +53,8 @@ int main() {
 		line(cross, Point(0, h / 2), Point(w, h / 2), Scalar(0, 0, 255));
 		imshow("fr", frame);
 		imshow("cr", cross);
+		outputvideo << cross;
+		
 		int key = waitKey(33);
 		if (key == 'q' || key == 'Q')break;
 	}
