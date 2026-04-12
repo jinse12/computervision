@@ -31,3 +31,30 @@ int main()
 	}
 	return 0;
 }
+/*
+#include <opencv2/opencv.hpp>
+#include <iostream> 
+using namespace std;
+using namespace cv;
+
+int main() {
+	VideoCapture cap("stopwatch.avi");
+
+	int fourcc = VideoWriter::fourcc('D', 'I', 'V', 'X');
+	VideoWriter outputvideo("output.avi", fourcc, 30, Size(640, 480));
+	while (true) {
+		Mat frame;
+		cap >> frame;
+		int h = frame.rows;
+		int w = frame.cols;
+
+		Mat cross = frame.clone();
+		line(cross, Point(w / 2, 0), Point(w / 2, h), Scalar(0, 0, 255));
+		line(cross, Point(0, h / 2), Point(w, h / 2), Scalar(0, 0, 255));
+		imshow("fr", frame);
+		imshow("cr", cross);
+		int key = waitKey(33);
+		if (key == 'q' || key == 'Q')break;
+	}
+}
+*/
