@@ -60,3 +60,29 @@ int main() {
 	}
 }
 */
+
+/*
+#include <iostream>
+#include <opencv2/opencv.hpp>
+using namespace std;
+using namespace cv;
+
+int main() {
+	VideoCapture cap("stopwatch.avi");
+	while (true) {
+		Mat frame;
+		cap >> frame;
+		if (frame.empty())break;
+		int w = frame.cols;
+		int h = frame.rows;
+		Mat bright = frame.clone();
+		line(bright, Point(w / 2, 0), Point(w / 2, h), { 0,0,255 }, 1);
+		line(bright, Point(0, h / 2), Point(w, h / 2), { 0,0,255 }, 1);
+
+		imshow("origin", frame);
+		imshow("bright", bright);
+		if (waitKey(30) == 'q')break;
+	}
+	return 0;
+}
+*/
