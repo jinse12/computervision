@@ -75,12 +75,12 @@ int main() {
 		if (frame.empty())break;
 		int w = frame.cols;
 		int h = frame.rows;
-		Mat bright = frame.clone();
-		line(bright, Point(w / 2, 0), Point(w / 2, h), { 0,0,255 }, 1);
-		line(bright, Point(0, h / 2), Point(w, h / 2), { 0,0,255 }, 1);
+		Mat cross = frame.clone();
+		line(cross, Point(w / 2, 0), Point(w / 2, h), { 0,0,255 }, 1);
+		line(cross, Point(0, h / 2), Point(w, h / 2), { 0,0,255 }, 1);
 
 		imshow("origin", frame);
-		imshow("bright", bright);
+		imshow("cross", cross);
 		if (waitKey(30) == 'q')break;
 	}
 	return 0;
