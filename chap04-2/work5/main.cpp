@@ -35,7 +35,7 @@ int main(void)
 	return 0;
 }
 
-/*
+/* 짧은
 #include <iostream>
 #include <opencv2/opencv.hpp>
 using namespace std;
