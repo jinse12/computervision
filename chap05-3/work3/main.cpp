@@ -21,6 +21,7 @@ Mat mygetGrayHistImage(const Mat& hist) {
 		int y2 = 100 - cvRound(hist.at<float>(i + 1, 0) * 100 / histMax);
 		line(imgHist, Point(i, y1), Point(i + 1, y2), Scalar(0));
 	}
+	return imgHist;
 }
 int main() {
 	Mat src = imread("lenna.bmp", IMREAD_GRAYSCALE);
